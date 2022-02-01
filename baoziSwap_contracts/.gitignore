@@ -1,0 +1,7 @@
+build/
+node_modules/
+.env
+.tronenv
+.history
+test.py
+test.js

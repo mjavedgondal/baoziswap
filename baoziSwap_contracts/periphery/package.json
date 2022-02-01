@@ -1,0 +1,58 @@
+{
+  "name": "Baoziswap-peripheral",
+  "version": "1.0.0",
+  "description": "🎚 Peripheral smart contracts for interacting with Baozi",
+  "engines": {
+    "node": ">=10"
+  },
+  "homepage": "https://Baoziswap.finance",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Baoziswap/Baozi-swap-periphery.git"
+  },
+  "files": [
+    "build",
+    "contracts"
+  ],
+  "dependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.0.3",
+    "@nomiclabs/hardhat-etherscan": "^2.1.2",
+    "@nomiclabs/hardhat-waffle": "^2.0.1",
+    "@types/chai": "^4.2.6",
+    "@types/mocha": "^5.2.7",
+    "chai": "^4.2.0",
+    "ethereum-waffle": "^2.4.1",
+    "ethereumjs-util": "^6.2.0",
+    "ethers": "^5.0.0",
+    "hardhat": "^2.2.1",
+    "hardhat-deploy": "^0.7.5",
+    "mocha": "^6.2.2",
+    "prettier": "^1.19.1",
+    "rimraf": "^3.0.0",
+    "solc": "^0.8.4",
+    "truffle-plugin-verify": "^0.5.1",
+    "ts-node": "^8.5.4",
+    "typescript": "^3.7.3"
+  },
+  "devDependencies": {
+    "@truffle/hdwallet-provider": "^1.4.1",
+    "dotenv": "^9.0.2",
+    "solhint": "^3.3.4",
+    "tronbox": "^2.7.24",
+    "truffle": "^5.1.41",
+    "truffle-flattener": "^1.4.4"
+  },
+  "scripts": {
+    "lint": "yarn prettier ./test/*.ts --check",
+    "lint:fix": "yarn prettier ./test/*.ts --write",
+    "clean": "rimraf ./build/",
+    "copy-v1-artifacts": "ncp ./buildV1 ./build",
+    "precompile": "yarn clean",
+    "compile": "waffle .waffle.json",
+    "postcompile": "yarn copy-v1-artifacts",
+    "pretest": "yarn compile",
+    "test": "mocha",
+    "prepublishOnly": "yarn test"
+  },
+  "license": "GPL-3.0-or-later"
+}

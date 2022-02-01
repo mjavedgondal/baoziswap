@@ -1,0 +1,54 @@
+version: '3'
+
+services:
+  db:
+    restart: always
+    image: postgres:14
+    env_file: .env
+    volumes:
+      - ./db:/var/lib/postgresql/data/
+    networks:
+      baozi-net:
+  web:
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    volumes:
+      - .:/code
+    ports:
+      - "${DOCKER_EXPOSE_PORT:-8000}:8000"
+    depends_on:
+      - db
+    command: >
+      bash -c "yes |  python manage.py makemigrations && 
+      python manage.py migrate && 
+      gunicorn --bind :8000 --workers 8 baozi.wsgi:application --capture-output"
+    networks:
+      baozi-net:
+  scanner:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    depends_on:
+      - db
+    restart: unless-stopped
+    volumes:
+      - .:/code
+    command: python baozi/scanner/start.py
+    networks:
+      baozi-net:
+
+networks:
+  baozi-net:
+
+  
+  
+  
+  
+
+  
