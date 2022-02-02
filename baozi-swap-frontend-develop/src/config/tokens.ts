@@ -70,6 +70,13 @@ export const tokenList: TypeToken[] = isProduction
         decimals: 18,
         logo: USDJLogo,
       },
+    {
+        name: 'testoken',
+        symbol: 'test',
+        address: 'TYo76665665',
+        decimals: 6,
+        logo: tronlogo,
+      },
       {
         name: 'SUN TOKEN',
         symbol: 'SUN',
