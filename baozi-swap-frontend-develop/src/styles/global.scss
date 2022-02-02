@@ -1,0 +1,63 @@
+@import 'typography';
+@import 'fonts';
+
+:root {
+  --body-text-color: #fff;
+  --body-bg-color: linear-gradient(to bottom right, #1c0e40, #040404 50%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+*::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: var(--color-scrollbar-bg);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--color-scrollbar);
+}
+
+*:focus {
+  outline: none;
+}
+
+.App {
+  min-height: 100vh;
+  @include flex(column, center, space-between, no-wrap);
+
+  @media (max-height: 700px) {
+    height: auto;
+  }
+}
+
+body {
+  margin: 0;
+
+  box-sizing: border-box;
+
+  font-family: 'Fredoka One', sans-serif;
+  font-weight: 400;
+
+  color: var(--body-color);
+  background-color: var(--body-background-color);
+  background-repeat: no-repeat;
+}
+
+input {
+  font-family: 'Fredoka One', sans-serif;
+
+  &::placeholder {
+    opacity: 0.2;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

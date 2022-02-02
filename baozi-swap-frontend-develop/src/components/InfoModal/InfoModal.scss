@@ -1,0 +1,48 @@
+@import "src/styles/mixins";
+
+.info-modal {
+  position: absolute;
+  z-index: 2;
+  top: 150px;
+  left: calc(50% - 125px);
+  padding: 10px;
+  width: 250px;
+  @include flex(column, center, center, no-wrap);
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 4px 25px rgba(229, 172, 75, 0.25);
+  font-size: 18px;
+  line-height: 19px;
+  color: #63482A;
+  @include animation;
+
+  &__message {
+    margin: 20px auto 10px;
+    width: 100%;
+    overflow-x: scroll;
+    text-align: center;
+  }
+
+  &__tx {
+    padding: 10px;
+  }
+
+  a {
+    margin: 10px auto;
+    text-align: center;
+
+    &:hover {
+      color: #CD921B;
+    }
+  }
+
+  &__btn {
+    margin: 10px auto 20px;
+    @include flex(row, center, center, no-wrap);
+    width: 100px;
+    height: 40px;
+    border: 2px solid #63482A;
+    border-radius: 30px;
+    cursor: pointer;
+  }
+}

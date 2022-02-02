@@ -1,0 +1,45 @@
+@import "src/styles/mixins";
+
+.liquidity-set {
+  margin-top: 37px;
+  padding: 30px;
+  width: 700px;
+
+  @include b(mobile) {
+    padding: 5px;
+    width: 90vw;
+    @include flex(column, center, flex-start, no-wrap);
+  }
+
+  &__header {
+    margin: 10px;
+    font-size: 18px;
+    line-height: 22px;
+    text-transform: uppercase;
+    color: #17171A;
+  }
+
+  &__btns {
+    @include flex(row, center, flex-start, no-wrap);
+
+    @include b(mobile) {
+      @include grid(repeat(2, 1fr), 1fr, 5px);
+    }
+  }
+
+  &__create {
+    margin: 15px 0 30px 10px;
+    width: 140px;
+  }
+
+  &__pools {
+    width: 100%;
+    @include flex(column, center, flex-start, no-wrap);
+    gap: 20px;
+
+    &__empty {
+      margin: 15px;
+      font-size: 18px;
+    }
+  }
+}

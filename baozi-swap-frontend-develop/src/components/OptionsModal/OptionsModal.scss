@@ -1,0 +1,149 @@
+@import "src/styles/mixins";
+
+.options-modal {
+  position: absolute;
+  z-index: 2;
+  top: 150px;
+  left: calc(50% - 160px);
+  padding: 20px;
+  width: 320px;
+  background-color: #fff;
+  box-shadow: 0 4px 25px rgba(229, 172, 75, 0.25);
+  border-radius: 20px;
+  @include animation;
+
+  &__header {
+    @include flex(row, center, space-between, no-wrap);
+    font-size: 18px;
+    line-height: 22px;
+    text-transform: uppercase;
+    color: #17171A;
+
+    &__btn {
+      cursor: pointer;
+    }
+  }
+
+  &__title {
+    margin: 30px 0 20px;
+    font-size: 16px;
+    line-height: 19px;
+    color: #63482A;
+  }
+
+  .slippage {
+    @include flex(row, center, flex-start, no-wrap);
+
+    &__auto {
+      margin-right: 9px;
+      min-width: 74px;
+      min-height: 46px;
+      @include flex(row, center, center);
+      background: rgba(244, 186, 70, 0.3);
+      border-radius: 30px;
+      font-size: 16px;
+      line-height: 19px;
+      text-align: center;
+      color: #63482A;
+      cursor: pointer;
+    }
+
+    &__input {
+      padding: 14px;
+      max-width: 192px;
+      height: 46px;
+      @include flex(row, center, flex-end, no-wrap);
+      border: 3px solid rgba(99, 72, 42, 0.1);
+      box-sizing: border-box;
+      border-radius: 30px;
+
+      input {
+        overflow-x: hidden;
+        border: none;
+        background: transparent;
+        font-size: 16px;
+        line-height: 19px;
+        text-align: right;
+
+        &::placeholder {
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+
+  &__error {
+    margin-top: 5px;
+    color: red;
+  }
+
+  .deadline {
+    @include flex(row, center, flex-start, no-wrap);
+    font-family: Lato, sans-serif;
+    font-size: 16px;
+    line-height: 19px;
+    color: rgba(0, 0, 0, 0.5);
+
+    &__input {
+      margin-right: 10px;
+      padding: 14px;
+      max-width: 83px;
+      height: 46px;
+      @include flex(row, center, center, no-wrap);
+      border: 3px solid rgba(99, 72, 42, 0.1);
+      box-sizing: border-box;
+      border-radius: 30px;
+
+      input {
+        overflow-x: hidden;
+        border: none;
+        background: transparent;
+        font-size: 16px;
+        line-height: 19px;
+        color: #63482A;
+      }
+    }
+  }
+
+  .interface-settings {
+    @include flex(row, center, space-between, no-wrap);
+    font-family: Lato, sans-serif;
+    font-size: 16px;
+    line-height: 19px;
+    color: rgba(0, 0, 0, 0.5);
+
+    &__switcher {
+      padding: 7px;
+      width: 61px;
+      background: #F5F5F5;
+      border-radius: 30px;
+      cursor: pointer;
+
+      &__dot {
+        width: 21px;
+        height: 21px;
+        background: #C7C7C7;
+        border-radius: 50%;
+      }
+
+      &-active {
+        position: relative;
+        padding: 7px;
+        width: 61px;
+        height: 35px;
+        background: rgba(244, 186, 70, 0.3);
+        border-radius: 30px;
+        cursor: pointer;
+
+        &__dot {
+          position: absolute;
+          right: 7px;
+          width: 21px;
+          height: 21px;
+          background: #63482A;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+}

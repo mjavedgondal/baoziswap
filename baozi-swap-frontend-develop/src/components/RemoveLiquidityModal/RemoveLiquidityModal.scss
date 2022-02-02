@@ -1,0 +1,111 @@
+@import "src/styles/mixins";
+
+.remove-modal {
+  position: absolute;
+  z-index: 1;
+  top: 100px;
+  left: calc(50% - 200px);
+  padding: 20px;
+  width: 400px;
+  background: #fff;
+  box-shadow: 0 4px 25px rgba(229, 172, 75, 0.25);
+  border-radius: 20px;
+  overflow-y: hidden;
+  @include animation;
+
+  @include b(mobile) {
+    top: calc(50% - 300px);
+    left: 0;
+    margin: 20px;
+    width: calc(100% - 40px);
+  }
+
+  &__header {
+    margin-bottom: 36px;
+    position: relative;
+    width: 100%;
+    @include flex(row, center, center, no-wrap);
+    text-align: center;
+    font-size: 18px;
+    line-height: 22px;
+    text-transform: uppercase;
+    color: #17171A;
+
+    &__close {
+      position: absolute;
+      right: 0;
+      cursor: pointer;
+    }
+  }
+
+  &__token {
+    @include flex(row, center, space-between, no-wrap);
+
+    &__amount {
+      font-size: 22px;
+      line-height: 27px;
+    }
+  }
+
+  .white-circle {
+    box-sizing: border-box;
+    width: 38px;
+    height: 38px;
+    @include flex(row, center, center, no-wrap);
+    background: #FFFFFF;
+    border: 1px solid #E6E6E6;
+    box-shadow: 0 1px 3px rgba(37, 41, 46, 0.08);
+    border-radius: 50%;
+  }
+
+  &__info {
+    margin-top: 36px;
+    font-family: Lato, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #373737;
+  }
+
+  &__lp {
+    margin-top: 18px;
+    @include flex(row, center, space-between, no-wrap);
+    font-family: Lato, sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    color: #373737;
+
+    &__amount {
+      @include flex(row, center, flex-end, no-wrap);
+
+      img {
+        width: 30px;
+        height: 30px;
+      }
+
+      &__second-logo {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  &__price {
+    margin-top: 18px;
+    @include flex(row, flex-start, space-between, no-wrap);
+    font-family: Lato, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #373737;
+
+    &__list {
+
+    }
+  }
+
+  &__confirm {
+    margin: 36px 0 10px 0;
+    height: 48px;
+  }
+}

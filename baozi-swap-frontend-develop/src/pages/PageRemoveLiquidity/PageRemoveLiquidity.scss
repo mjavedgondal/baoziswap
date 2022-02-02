@@ -1,0 +1,42 @@
+@import '../../styles/mixins';
+
+.add-liquidity {
+  background: var(--gradient-background);
+  overflow-y: auto;
+
+  &__container {
+    @include pageContainer;
+
+    &__tabs {
+      @include flex(row, center, center, nowrap);
+      margin: 33px 0 0 0;
+      min-width: 200px;
+      max-width: 480px;
+      padding: 8px 6px;
+      border-radius: 20px;
+      box-shadow: 0 4px 25px 0 #E5AC4B40;
+      font-size: 16px;
+      line-height: 19px;
+      text-transform: uppercase;
+
+      @include b(mobile) {
+        margin: 70px 0 0 0;
+      }
+
+      &__tab {
+        @include flex(row, center, center, nowrap);
+        gap: 6px;
+        height: 41px;
+        border-radius: 20px;
+        padding: 6px 34px 6px 34px;
+        background: #FFFFFF;
+        cursor: pointer;
+      }
+
+      .active {
+        background: #F4BA46;
+        color: #FFFFFF;
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+@import 'src/styles/mixins';
+
+.footer {
+  margin: 100px auto 0;
+  padding-bottom: 15px;
+  width: 100%;
+  font-size: 16px;
+  text-align: center;
+
+  color: rgba(0, 0, 0, 0.3);
+
+  &__links {
+    margin-bottom: 20px;
+    @include flex(row, center, center, no-wrap);
+    gap: 24px;
+  }
+}

@@ -1,0 +1,115 @@
+@import "src/styles/mixins";
+
+.open {
+  border-radius: 20px !important;
+
+  .liquidity-pool__btn {
+    background: #63482A;
+    color: #fff;
+  }
+}
+
+.liquidity-pool {
+  padding: 0 30px;
+  width: 100%;
+  min-height: 100px;
+  background: #F8F5EA;
+  border-radius: 60px;
+
+  @include b(mobile) {
+    padding: 0 10px;
+    min-height: 90px;
+    border-radius: 16px;
+  }
+
+  &__header {
+    margin-top: 34px;
+    @include flex(row, center, space-between);
+    gap: 10px;
+
+    @include b(mobile) {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__info {
+    @include flex(row, center, flex-start, no-wrap);
+
+    &__logo {
+      img {
+        width: 32px;
+        height: 32px;
+      }
+
+      .second-token {
+        margin-right: 10px;
+      }
+    }
+
+    &__name {
+      font-size: 24px;
+      line-height: 29px;
+      text-transform: uppercase;
+
+      @include b(mobile) {
+        font-size: 18px;
+        line-height: 22px;
+      }
+    }
+  }
+
+  &__btn {
+    width: 103px;
+    height: 32px;
+    @include flex(row, center, center, no-wrap);
+    gap: 6px;
+    background: #FFFFFF;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #25292E;
+    cursor: pointer;
+
+    @include b(mobile) {
+
+    }
+  }
+
+  &__content {
+    margin-top: 43px;
+    width: 100%;
+    @include flex(column, center, flex-start, no-wrap);
+    gap: 20px;
+
+    &__item {
+      width: 100%;
+      @include flex(row, center, space-between, wrap);
+      gap: 10px;
+      font-family: Lato, sans-serif;
+      font-size: 18px;
+      line-height: 22px;
+
+      &__value {
+        @include flex(row, center, flex-end, no-wrap);
+        gap: 5px;
+
+        img {
+          width: 22px;
+          height: 22px;
+        }
+      }
+    }
+
+    &__buttons {
+      margin: 10px 0 20px;
+      width: 100%;
+      @include grid(repeat(3, 1fr), 1fr, 20px);
+
+      @include b(mobile) {
+        @include grid(repeat(3, 1fr), 1fr, 5px);
+      }
+    }
+  }
+}

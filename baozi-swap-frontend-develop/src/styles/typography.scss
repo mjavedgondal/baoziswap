@@ -1,0 +1,213 @@
+@import "src/styles/mixins";
+
+// colors
+
+// background
+$color-bg: #07092a;
+$color-bg-section: #212443;
+$color-bg-header: #07092a;
+$color-bg-footer: #07092a;
+$color-bg-error: #c88a38;
+$color-bg-input: #07092a;
+$color-bg-input-small: #212443;
+$color-bg-pagination: #07092a;
+$color-bg-image: rgba(255, 255, 255, 0.15);
+$color-bg-select: #2c2d4b;
+$color-bg-select-item: #2c2d4b;
+$color-bg-select-item-hover: #212443;
+$color-bg-checkbox: #0197E2;
+$color-bg-radio: #2c2d4b;
+$color-bg-radio-point: #0197E2;
+$color-bg-chart: #212443;
+$color-bg-dropdown: #07092a;
+$color-bg-dropdown-item: #212443;
+$color-bg-button: #0197e2;
+$color-bg-card: rgba(1, 151, 226, 0.3);
+$color-bg-button-primary: #E4D2B5;
+$color-bg-button-primary-hover: rgba(228, 210, 181, 0.8);
+$color-bg-button-secondary: #63482A;
+$color-bg-button-secondary-hover: rgba(99, 72, 42, 0.8);
+$color-bg-button-inverted: #fff;
+$color-bg-button-inverted-hover: rgba(255, 255, 255, 0.8);
+$color-bg-button-normal: transparent;
+$color-bg-login-item-hover: #0197e23d;
+// text
+$color-text-primary: #fff;
+$color-text-secondary: rgba(255, 255, 255, 0.5);
+$color-text-bright: #fff;
+$color-text-link: #0197e2;
+$color-text-span: #0197e2;
+$color-text-span-green: #00E3B6;
+$color-text-header: #fff;
+$color-text-footer: #fff;
+$color-text-input: #fff;
+$color-text-input-placeholder: rgba(255, 255, 255, 0.5);
+$color-text-green: #01c6c7;
+$color-text-red: #b94825;
+$color-text-error: #b94825;
+$color-text-button-primary: #63482A;
+$color-text-button-secondary: #fff;
+$color-text-button-normal: rgba(255, 255, 255, 0.5);
+// scrollbar
+$color-scrollbar: rgba(1, 151, 226, 0.3);
+$color-scrollbar-bg: #07092a;
+//
+$color-gradient-button-start: rgba(208, 208, 208, 1);
+$color-gradient-button-end: rgba(208, 208, 208, 1);
+$color-gradient-button: linear-gradient(
+  90deg,
+  $color-gradient-button-start 0px,
+  $color-gradient-button-start 7px,
+  $color-gradient-button-end 7px,
+  $color-gradient-button-end 100%
+);
+$color-gradient-header-start: rgba(255, 255, 255, 0);
+$color-gradient-header-end: rgba(255, 255, 255, 1);
+$color-gradient-header: linear-gradient(
+  0deg,
+  $color-gradient-header-start 0%,
+  $color-gradient-header-end 100%
+);
+// border
+$color-border-header-start: rgba(255, 255, 255, 0);
+$color-border-header-end: rgba(255, 255, 255, 0.25);
+$color-border-header: linear-gradient(
+  90deg,
+  $color-border-header-start 0%,
+  $color-border-header-end 100%
+);
+$color-border-login-item: #0197e238;
+$color-border-account-menu-item: #303355;
+$color-border-bottom-span: #0197e2;
+// others
+$color-cursor-input: #fff;
+$color-chart-line: #01c9c5;
+$color-chart-line-vertical: rgba(255, 255, 255, 0.3);
+
+// ============================================
+// borders
+
+$border-header: 1px solid $color-border-header;
+$border-input: 2px solid rgba(1, 151, 226, 0.5);
+$border-pagination: 2px solid rgba(1, 151, 226, 0.5);
+$border-input-dropdown: 1px solid rgba(1, 151, 226, 0.5);
+$border-card: 2px solid #203054;
+$border-tab: 2px solid #203054;
+$border-form: 3px solid rgba(1, 151, 226, 0.5);
+
+// ============================================
+// shadows
+
+$color-shadow-menu: #0197e2;
+$shadow-container: 0px 4px 60px rgba(0, 0, 0, 0.05);
+$shadow-dropdown: 0px 8px 15px rgba(0, 0, 0, 0.15);
+$shadow-menu: 0 4px 40px $color-shadow-menu;
+$shadow-border: 0 0 0 1px lightgrey inset;
+
+// ============================================
+// dimentions
+
+$height-input: 70px;
+$height-input-small: 55px;
+$height-header: 83px;
+$height-header-mobile: 69px;
+
+// ============================================
+// templates
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  @include b(mobile) {
+    background: rgba(0, 0, 0, 0.8);
+  }
+}
+
+.shadow-box {
+  background: #FFFFFF;
+  box-shadow: 0 4px 25px rgba(229, 172, 75, 0.25);
+  border-radius: 20px;
+}
+
+.shadow-btn {
+  padding: 6px 12px;
+  @include flex(row, center, space-between, no-wrap);
+  gap: 6px;
+  background: #FFFFFF;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  border-radius: 20px;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  &__logo {
+    width: 30px;
+    height: 30px;
+
+    &__second {
+      margin-left: -6px;
+      width: 30px;
+      height: 30px;
+      position: relative;
+    }
+  }
+}
+
+.yellow-btn {
+  height: 44px;
+  @include flex(row, center, center, no-wrap);
+  background: #E5AC4B;
+  border-radius: 30px;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: -0.1px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  cursor: pointer;
+
+  @include b(mobile) {
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  &:hover {
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.brown-btn {
+  @include flex(row, center, center, no-wrap);
+  background: #63482A;
+  border-radius: 33px;
+  color: #fff !important;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 17px;
+
+  @include b(mobile) {
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  &:hover {
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+  }
+}
+
+// ============================================
+// keyframes
+
+@keyframes dropdown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

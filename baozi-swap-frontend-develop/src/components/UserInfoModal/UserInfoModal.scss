@@ -1,0 +1,61 @@
+@import "src/styles/mixins";
+
+.user-info {
+  position: absolute;
+  right: 30px;
+  top: 90px;
+  width: 320px;
+  background: #ffffff;
+  padding: 20px;
+  box-shadow: 0 4px 25px rgba(229, 172, 75, 0.25);
+  border-radius: 20px;
+  font-size: 16px;
+  line-height: 19px;
+  color: #63482A;
+  @include animation;
+
+  @include b(mobile) {
+    left: 0;
+    margin: 20px;
+    width: calc(100% - 40px);
+  }
+
+  &__header {
+    margin-bottom: 10px;
+    @include flex(row, center, space-between, no-wrap);
+    font-size: 18px;
+    line-height: 22px;
+    text-transform: uppercase;
+    color: #17171A;
+
+    &__btn {
+      cursor: pointer;
+    }
+  }
+
+  &__address {
+    margin-top: 30px;
+    @include flex(row, center, center, no-wrap);
+    width: 208px;
+    height: 43px;
+    background: #FCEAC8;
+    border-radius: 30px;
+  }
+
+  .is-copied {
+    margin-top: 5px;
+    color: rgba(0, 0, 0, 0.5);
+  }
+
+  &__buttons {
+    margin-top: 22px;
+    @include flex(column, flex-start, flex-start, no-wrap);
+    gap: 20px;
+
+    &__btn {
+      @include flex(row, center, flex-start, no-wrap);
+      gap: 16px;
+      cursor: pointer;
+    }
+  }
+}

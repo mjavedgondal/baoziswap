@@ -1,0 +1,14 @@
+@import "./mixins";
+
+// Fredoka One
+@include font-face('Fredoka One', '../assets/fonts/FredokaOne-Regular.ttf', 400);
+
+// Lato
+@include font-face('Lato', '../assets/fonts/Lato-Regular.ttf', 400);
+@include font-face('Lato', '../assets/fonts/Lato-Bold.ttf', 700);
+
+// Roboto
+@include font-face('Roboto', '../assets/fonts/Roboto-Regular.ttf', 400);
+
+// Inter
+@include font-face('Inter', '../assets/fonts/Inter-Regular.ttf', 400);

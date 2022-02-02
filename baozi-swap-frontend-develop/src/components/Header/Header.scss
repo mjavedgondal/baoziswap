@@ -1,0 +1,70 @@
+@import '../../styles/mixins';
+
+.header {
+  @include grid(1fr 1fr, 1fr, 0);
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  padding: 0 30px;
+  pointer-events: none;
+  height: 120px;
+
+  @include b(mobile) {
+    height: 60px;
+    padding: 0 10px 0 16px;
+    background: #ffffff;
+    box-shadow: 0 4px 25px 0 #E5AC4B40;
+    border-radius: 0 0 20px 20px;
+  }
+
+  &__left {
+    @include grid(1fr, 1fr, 0);
+    align-content: center;
+    justify-content: center;
+
+    &__logo {
+      width: 200px;
+      cursor: pointer;
+      pointer-events: auto;
+      align-self: center;
+
+      img {
+        width: 200px;
+      }
+
+      @include b(mobile) {
+        max-width: 100px;
+
+        img {
+          width: 92px;
+          height: 48px;
+        }
+      }
+    }
+  }
+
+  &__right {
+    @include grid(1fr, 1fr, 0);
+    align-content: center;
+    justify-content: center;
+
+    &__button {
+      @include flex(row, center, center, nowrap);
+      gap: 6px;
+      height: 41px;
+      border-radius: 33px;
+      padding: 0 41px;
+      cursor: pointer;
+      background: #63482A;
+      color: #FFFFFF;
+      max-width: 200px;
+      align-self: center;
+      justify-self: right;
+      pointer-events: auto;
+
+      @include b(mobile) {
+        padding: 0 24px;
+      }
+    }
+  }
+}
