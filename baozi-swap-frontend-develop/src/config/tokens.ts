@@ -73,7 +73,7 @@ export const tokenList: TypeToken[] = isProduction
     {
         name: 'testoken',
         symbol: 'test',
-        address: 'TYo7666566ygttfggvg5',
+        address: 'TEkxiTehnzSmSe2XqrBj4w32RUN966rdz8',
         decimals: 6,
         logo: TRXlogo,
       },
