@@ -75,8 +75,9 @@ export const tokenList: TypeToken[] = isProduction
         symbol: 'test',
         address: 'TEkxiTehnzSmSe2XqrBj4w32RUN966rdz8',
         decimals: 6,
-        logo: TRXlogo,
+        logo: TRXLogo,
       },
+      
       {
         name: 'SUN TOKEN',
         symbol: 'SUN',
