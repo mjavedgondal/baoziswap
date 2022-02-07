@@ -2,6 +2,7 @@
   "name": "react-template",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://{username}.github.io"
   "scripts": {
     "start": "react-scripts start",
     "start:ssl": "cross-env HTTPS=true && react-scripts start",
